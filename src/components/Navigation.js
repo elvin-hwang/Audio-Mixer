@@ -6,7 +6,7 @@ export class Navigation extends Component {
     render() {
         return (
             <Navbar bg="info" expand="lg">
-                <Navbar.Brand className="text-white" href="/Audio-Mixer">
+                <Navbar.Brand className="text-white" href="https://elvin-hwang.github.io/Audio-Mixer/#/">
                     SOUNDAPP
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
