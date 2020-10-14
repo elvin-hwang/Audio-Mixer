@@ -12,8 +12,8 @@ export class Navigation extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                     <Nav>
-                        <Nav.Link className="d-inline p-2 text-white" href="/commands">Commands</Nav.Link>
-                        <Nav.Link className="d-inline p-2 text-white" href="/dsl">Our DSL</Nav.Link>
+                        <Nav.Link className="d-inline p-2 text-white" href="/Audio-Mixer/commands">Commands</Nav.Link>
+                        <Nav.Link className="d-inline p-2 text-white" href="/Audio-Mixer/dsl">Our DSL</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
