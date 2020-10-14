@@ -13,9 +13,9 @@ function App() {
                 <Navigation />
                 <div className="App-header">
                     <Switch>
-                        <Route path="/" component={Commands} exact />
-                        <Route path="/dsl" component={DSLPage} />
-                        <Route path="/commands" component={Commands} />
+                        <Route path="/Audio-Mixer" component={Commands} exact />
+                        <Route path="/Audio-Mixer/dsl" component={DSLPage} />
+                        <Route path="/Audio-Mixer/commands" component={Commands} />
                     </Switch>
                 </div>
             </div>
