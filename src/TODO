@@ -1,10 +1,8 @@
 Some sound samples
 https://drive.google.com/drive/folders/1rHhEOZPMbzokyA06gZNqo97b9ddhD21j?usp=sharing
 
-1. A React component to display added sounds in SoundManager, updates after a command has been submitted.
-    - Implement the math and logic to render the sound as lines
-
-Optional UI TASKS :
+Optional TASKS :
+    - Add sample commands to DSL page
     - Make DSL a pop-up or smth, switching between pages causes error in soundbuttons - easy?
     - Hard code the location of the sound button - easy?
     - A pause/resume functionality - medium

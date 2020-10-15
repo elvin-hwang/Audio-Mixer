@@ -63,7 +63,7 @@ class InputForm extends Component {
                                     onChange={this.handleChange}
                                 />
                                 <Form.Text className="text-muted">
-                                    Please enter text here of your DSL commands
+                                    Please enter DSL text commands here
                                 </Form.Text>
                             </Form.Group>
                             <Button variant="info" type="submit">
@@ -71,7 +71,7 @@ class InputForm extends Component {
                             </Button>
                         </Form>
                     </div>
-                    <PlayButton></PlayButton>
+                    <PlayButton/>
                     <br />
                     <h3>Commands History</h3>
                     <div className="commandsHistory">
@@ -80,7 +80,7 @@ class InputForm extends Component {
                                 <small className="text-muted">You have not executed any commands yet</small>
                             </h5>
                         )}
-                        {this.state.commandOutput.reverse().map(c => (
+                        {this.state.commandOutput.slice().reverse().map(c => (
                             <div key={c}>
                                 {!c.error && (
                                     <h5>

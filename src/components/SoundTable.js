@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import soundManager from '../controllers/soundManager'
+import { displaySounds } from '../controllers/soundController'
 import { Line } from 'react-lineto'
 import './styles.css'
 
@@ -18,7 +19,7 @@ class SoundTable extends Component {
             this.setState({
                 soundLines: this.getSoundLines(containerRect),
             })
-        }, 10) // This determines how often the polling occurs in ms
+        }, 10) // This determines how often the polling occurs in milliseconds
     }
 
     componentWillUnmount() {
@@ -26,58 +27,16 @@ class SoundTable extends Component {
     }
 
     getSoundLines(containerRect) {
-        // console.log(containerRect);
-
-        // bottom: 1117.078125
-        // height: 827.5625
-        // left: 473.4375
-        // right: 1073.421875
-        // top: 289.515625
-        // width: 599.984375
-        // x: 473.4375
-        // y: 289.515625
-
-        // The distance from the top that it's scrolled from
-        let scrollYOffset =
-            window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-
-        // Some examples of lines
-        let line1 = (
-            <div key="1" style={{ position: 'absolute' }}>
-                <Line
-                    x0={containerRect.left + 2}
-                    y0={containerRect.top + scrollYOffset + 150}
-                    x1={containerRect.left + 100}
-                    y1={containerRect.top + scrollYOffset + 150}
-                    borderColor="blue"
-                    borderWidth={5}
-                />{' '}
-            </div>
-        )
-        let line2 = (
-            <Line
-                key="2"
-                x0={550}
-                y0={400}
-                x1={580}
-                y1={400}
-                borderColor="white"
-                borderWidth={5}
-                borderStyle="outset"
-            />
-        )
-
         // Each sound has a div, and each div has multiple lines
-        return Object.keys(soundManager.sounds).map(key => (
-            <SoundLine sound={soundManager.sounds[key]} canvas={containerRect} key={key}/>
+        return Object.keys(soundManager.sounds).map((key, i) => (
+            <SoundLine sound={soundManager.sounds[key]} canvas={containerRect} index={i + 1} key={key} />
         ))
-        return [line1, line2]
     }
 
     renderLines() {
         return Array(15)
             .fill(null)
-            .map((el, i) => <VerticalLine left={i * 6.7} key={i} />)
+            .map((el, i) => <VerticalLine left={i * 6.7} index={i} key={i} />)
     }
 
     render() {
@@ -94,26 +53,26 @@ class SoundTable extends Component {
     }
 }
 
-const VerticalLine = ({ left }) => {
-    let index = parseInt((left / 6.7) * 4)
+const VerticalLine = ({ left, index }) => {
+    let pos = parseInt(index * 4)
     return (
         <div className="verticalLine" style={{ left: `${left}%` }}>
-            <p className="time"> {index}</p>
+            <p className="time"> {pos}</p>
         </div>
     )
 }
 
-const SoundLine = ({ sound, canvas }) => {
-    let lineData = getData(sound, canvas)
+const SoundLine = ({ sound, canvas, index }) => {
+    let lineData = getData(sound, canvas, index)
     return (
         <div className="soundLineRow">
             {lineData.map(data => (
                 <Line
                     key="2"
                     x0={data.x0}
-                    y0={data.y0}
+                    y0={data.y}
                     x1={data.x1}
-                    y1={data.y1}
+                    y1={data.y}
                     borderColor={sound.color}
                     borderWidth={5}
                     borderStyle="outset"
@@ -128,11 +87,15 @@ const SoundLabels = ({ soundList }) => {
         <div className="soundLabelContainer">
             <div className="soundLabelPadding">Time</div>
             {Object.keys(soundList).map(key => (
-                <div key={key} className="soundLabel">{key}</div>
+                <div key={key} className="soundLabel">
+                    {key}
+                </div>
             ))}
-            <div className="soundLabel">CPSC</div>
-            <div className="soundLabel">410</div>
-            <div className="soundLabel">PROJECT</div>
+            <div ></div>
+            <div className="soundLabel"></div>
+            <div className="soundLabel"></div>
+            <div className="soundLabel"></div>
+            <div className="soundLabel"></div>
             <div className="soundLabel">HO</div>
             <div className="soundLabel">HO</div>
             <div className="soundLabel">HO</div>
@@ -146,22 +109,48 @@ const SoundLabels = ({ soundList }) => {
             <div className="soundLabel">HO</div>
             <div className="soundLabel">HO</div>
             <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">MERRY</div>
-            <div className="soundLabel">CHRISTMAS</div>
         </div>
     )
 }
 
 // TODOTODOTODOTODO
-function getData(sound, canvas) {
+function getData(sound, canvas, index) {
+    if (!sound.soundBuffer) return []
     let scrollYOffset =
         window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-    let data = { x0: 0, y0: 0, x1: 0, y1: 0 }
-    // console.log(sound)
-    // console.log(canvas)
-    return []
+    let dataList = [];
+
+    // Get Pixel to Second conversion ratio
+    let ratio = canvas.width / 60
+
+    // Get Y Position
+    let top = scrollYOffset + canvas.top
+    let yOffset = canvas.height * 0.05 * index + canvas.height * 0.02
+    let yPos = top + yOffset
+
+    // Convert seconds into pixels
+    let startPos = canvas.left + 2 + ratio * sound.pos
+    let lengthWidth = ratio * sound.soundMods.length
+
+    // calculate audio duration:
+    let durationWidth = ratio * displaySounds[sound.id].duration * sound.soundMods.speed
+    
+    if (sound.soundMods.length && !sound.soundMods.interval) {
+        durationWidth = lengthWidth
+    }
+
+    dataList.push({ x0: startPos, x1: startPos + durationWidth, y: yPos })
+
+    if (sound.soundMods.interval) {
+        let intervalWidth = ratio * sound.soundMods.interval
+        let maxWidth = startPos + lengthWidth
+        for (let i = startPos + intervalWidth; i < maxWidth; i += intervalWidth) {
+            let endPosition = i + durationWidth >= maxWidth ? maxWidth : i + durationWidth
+            dataList.push({ x0: i, x1: endPosition, y: yPos })
+        }
+    }
+
+    return dataList
 }
 
 export default SoundTable

@@ -64,7 +64,8 @@ export class Sound {
     setUpAudio() {
         let file = null
         Object.keys(allSounds).map(key => {
-            if (key.toLowerCase() == this.id) {
+            if (key.toLowerCase() == this.id.toLowerCase()) {
+                this.id = key;
                 file = allSounds[key]
             }
         })
