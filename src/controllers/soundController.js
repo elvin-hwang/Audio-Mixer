@@ -99,6 +99,8 @@ export class Sound {
             if (buffer.duration > totalDuration) buffer = util.resize(buffer, buffer.sampleRate * totalDuration)
 
             return buffer
+        }).catch(error => {
+            return this.setUpAudio();
         })
     }
 
