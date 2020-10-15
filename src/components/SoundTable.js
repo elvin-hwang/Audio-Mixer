@@ -91,28 +91,10 @@ const SoundLabels = ({ soundList }) => {
                     {key}
                 </div>
             ))}
-            <div ></div>
-            <div className="soundLabel"></div>
-            <div className="soundLabel"></div>
-            <div className="soundLabel"></div>
-            <div className="soundLabel"></div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
-            <div className="soundLabel">HO</div>
         </div>
     )
 }
 
-// TODOTODOTODOTODO
 function getData(sound, canvas, index) {
     if (!sound.soundBuffer) return []
     let scrollYOffset =
@@ -124,7 +106,7 @@ function getData(sound, canvas, index) {
 
     // Get Y Position
     let top = scrollYOffset + canvas.top
-    let yOffset = canvas.height * 0.05 * index + canvas.height * 0.02
+    let yOffset = canvas.height * 0.05 * index + canvas.height * 0.01
     let yPos = top + yOffset
 
     // Convert seconds into pixels
@@ -138,13 +120,17 @@ function getData(sound, canvas, index) {
         durationWidth = lengthWidth
     }
 
-    dataList.push({ x0: startPos, x1: startPos + durationWidth, y: yPos })
+    let endPosition = startPos + durationWidth;
+    if (endPosition >= canvas.right) endPosition = canvas.right - 2;
+
+    dataList.push({ x0: startPos, x1: endPosition, y: yPos })
 
     if (sound.soundMods.interval) {
         let intervalWidth = ratio * sound.soundMods.interval
         let maxWidth = startPos + lengthWidth
+        if (maxWidth >= canvas.right) maxWidth = canvas.right - 2;
         for (let i = startPos + intervalWidth; i < maxWidth; i += intervalWidth) {
-            let endPosition = i + durationWidth >= maxWidth ? maxWidth : i + durationWidth
+            endPosition = i + durationWidth >= maxWidth ? maxWidth : i + durationWidth
             dataList.push({ x0: i, x1: endPosition, y: yPos })
         }
     }

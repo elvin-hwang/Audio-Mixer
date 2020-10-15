@@ -44,7 +44,7 @@
 .soundTable {
     display: flex;
     width: 95%;
-    height:100%;
+    height:700px;
     padding: 1.5%;
     justify-content: space-around;
 }
@@ -94,7 +94,7 @@
 
 .soundLabelPadding {
     display: flex;
-    height: 5%;
+    height: 3.5%;
     justify-content: center;
     font-size: 12pt;
     font-family: Arial, sans-serif;
