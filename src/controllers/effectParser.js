@@ -25,11 +25,11 @@ function parseEffect(effect, mods) {
             mods.length = getFloat(tokens[1])
             if (tokens.length == 4) {
                 mods.interval = getFloat(tokens[3])
-                if (mods.interval > 60 || mods.interval <= 0) {
+                if (mods.interval >= 60 || mods.interval <= 0) {
                     throw 'Invalid Parameters in Interval: ' + tokens;
                 }
             }
-            if (mods.length >= 60 || mods.length <= 0) {
+            if (mods.length > 60 || mods.length <= 0) {
                 throw 'Invalid Parameters in Length: ' + tokens
             }
             break
