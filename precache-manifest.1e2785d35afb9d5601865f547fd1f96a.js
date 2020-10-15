@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0bc2274fa1bd136c9b524221f919a9f0",
+    "revision": "7e7cf9d8eef69de05b679b0779009073",
     "url": "/Audio-Mixer/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Audio-Mixer/static/css/2.8aa5a7f8.chunk.css"
   },
   {
-    "revision": "4226d7b90a42ef836eb4",
-    "url": "/Audio-Mixer/static/css/main.5e913a46.chunk.css"
+    "revision": "0dd96704e858e5646669",
+    "url": "/Audio-Mixer/static/css/main.a0e76591.chunk.css"
   },
   {
     "revision": "6125238139ae74a83fee",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Audio-Mixer/static/js/2.9d58273a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4226d7b90a42ef836eb4",
-    "url": "/Audio-Mixer/static/js/main.3a08a170.chunk.js"
+    "revision": "0dd96704e858e5646669",
+    "url": "/Audio-Mixer/static/js/main.1b013f4d.chunk.js"
   },
   {
     "revision": "b3cb05e011e11ed3e8a1",
