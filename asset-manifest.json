@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Audio-Mixer/static/css/main.a0e76591.chunk.css",
-    "main.js": "/Audio-Mixer/static/js/main.e10020c9.chunk.js",
-    "main.js.map": "/Audio-Mixer/static/js/main.e10020c9.chunk.js.map",
+    "main.js": "/Audio-Mixer/static/js/main.e4b14384.chunk.js",
+    "main.js.map": "/Audio-Mixer/static/js/main.e4b14384.chunk.js.map",
     "runtime-main.js": "/Audio-Mixer/static/js/runtime-main.ca3bbd9d.js",
     "runtime-main.js.map": "/Audio-Mixer/static/js/runtime-main.ca3bbd9d.js.map",
     "static/css/2.8aa5a7f8.chunk.css": "/Audio-Mixer/static/css/2.8aa5a7f8.chunk.css",
     "static/js/2.9d58273a.chunk.js": "/Audio-Mixer/static/js/2.9d58273a.chunk.js",
     "static/js/2.9d58273a.chunk.js.map": "/Audio-Mixer/static/js/2.9d58273a.chunk.js.map",
     "index.html": "/Audio-Mixer/index.html",
-    "precache-manifest.421ceb58ab7544dc4d4a5311e108cf82.js": "/Audio-Mixer/precache-manifest.421ceb58ab7544dc4d4a5311e108cf82.js",
+    "precache-manifest.04a5095e9083c1b923bb467956c1828c.js": "/Audio-Mixer/precache-manifest.04a5095e9083c1b923bb467956c1828c.js",
     "service-worker.js": "/Audio-Mixer/service-worker.js",
     "static/css/2.8aa5a7f8.chunk.css.map": "/Audio-Mixer/static/css/2.8aa5a7f8.chunk.css.map",
     "static/css/main.a0e76591.chunk.css.map": "/Audio-Mixer/static/css/main.a0e76591.chunk.css.map",
@@ -33,6 +33,6 @@
     "static/css/2.8aa5a7f8.chunk.css",
     "static/js/2.9d58273a.chunk.js",
     "static/css/main.a0e76591.chunk.css",
-    "static/js/main.e10020c9.chunk.js"
+    "static/js/main.e4b14384.chunk.js"
   ]
 }
