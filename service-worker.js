@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Audio-Mixer/precache-manifest.286409695f3ead0f5cbe2786bff7e7c4.js"
+  "/Audio-Mixer/precache-manifest.07fa1906891f65e3c6ccefc5a5763cff.js"
 );
 
 self.addEventListener('message', (event) => {
