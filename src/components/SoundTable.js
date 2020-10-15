@@ -100,6 +100,14 @@ const SoundLabels = ({ soundList }) => {
             <div className="soundLabel">HO</div>
             <div className="soundLabel">HO</div>
             <div className="soundLabel">HO</div>
+            <div className="soundLabel">HO</div>
+            <div className="soundLabel">HO</div>
+            <div className="soundLabel">HO</div>
+            <div className="soundLabel">HO</div>
+            <div className="soundLabel">HO</div>
+            <div className="soundLabel">HO</div>
+            <div className="soundLabel">HO</div>
+            <div className="soundLabel">HO</div>
         </div>
     )
 }
