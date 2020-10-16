@@ -20,6 +20,7 @@ class DSLPage extends Component {
                 'Add sound_trumpmilliondollar as dollars at 14.8, speed 0.8, volume 100;',
                 'Add sound_wobble as wobble at 18, length 20;',
                 'Add sound_trumpamerica as murica at 22, speed 0.9;',
+                'Add sound_trumprich as rich at 23, speed 0.75, volume 200;',
                 'Add sound_organ as organ at 31.6, volume 30;',
                 'Add sound_organ as organ2 at 46;',
                 'Add sound_lofidrum as beat2 at 46, speed 0.9, volume 60, length 14;',
