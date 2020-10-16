@@ -6,8 +6,21 @@
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     padding-bottom: 5%;
+}
+
+.accord{
+    padding-top: 1%;
+    padding-bottom:1%;
+    width: 65%;
+}
+.accordcards{
+    color: #17a2b8;
+    
+}
+.accordtext{
+    color:black;
+    font-style: italic;
 }
 
 .inputform {
@@ -23,7 +36,7 @@
 }
 
 .figurepic {
-    max-width: 37%;
+    max-width: 55%;
 }
 
 .commandsHistory {
