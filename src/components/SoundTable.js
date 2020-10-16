@@ -114,7 +114,7 @@ function getData(sound, canvas, index) {
     let lengthWidth = ratio * sound.soundMods.length
 
     // calculate audio duration:
-    let durationWidth = ratio * displaySounds[sound.id].duration * sound.soundMods.speed
+    let durationWidth = ratio * displaySounds[sound.id].duration / sound.soundMods.speed
     
     if (sound.soundMods.length && !sound.soundMods.interval) {
         durationWidth = lengthWidth
