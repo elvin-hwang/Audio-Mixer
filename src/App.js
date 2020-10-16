@@ -15,7 +15,6 @@ function App() {
                     <Switch>
                         <Route path="/" component={Commands} exact />
                         <Route path="/dsl" component={DSLPage} />
-                        <Route path="/commands" component={Commands} />
                     </Switch>
                 </div>
             </div>
