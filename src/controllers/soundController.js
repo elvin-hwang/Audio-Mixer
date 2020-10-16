@@ -1,44 +1,85 @@
-import TrumpChina from '../sounds/trump-China.wav'
 import TrumpMillionDollar from '../sounds/trump-A-Million-Dollars.wav'
 import TrumpAmerica from '../sounds/trump-America.wav'
 import TrumpBigger from '../sounds/trump-bigger.wav'
 import TrumpRich from '../sounds/trump-Im-Really-Rich.wav'
-import ShipSound from '../sounds/ship.wav'
-import CompressedElectro from '../sounds/compressedElectro.wav'
-import OneFiveElectro from '../sounds/oneFiveElectro.wav'
+
+import Atmosphere from '../sounds/atmosphere.wav'
+import AtmosphereHigh from '../sounds/atmosphereHigh.wav'
+import BuildUp from '../sounds/buildup.wav'
+import Buong from '../sounds/buong.wav'
+import Drop from '../sounds/drop.wav'
+import ElectroChorus from '../sounds/electroChorus.wav'
+import Hat from '../sounds/hat.wav'
+import HighChorus from '../sounds/HighChorus.wav'
+import Kick from '../sounds/kick.wav'
+import LofiDrum from '../sounds/lofiDrum.wav'
+import MidChorus from '../sounds/MidChorus.wav'
+import Organ from '../sounds/organ.wav'
+
+import PianoBackground from '../sounds/PianoBackground.wav'
+import PianoChorus from '../sounds/PianoChorus.wav'
+import ShakerLoop from '../sounds/shakerLoop.wav'
 import Snare from '../sounds/snare.wav'
-import Dance from '../sounds/dance.wav'
-import LoudElectro from '../sounds/loudElectro.wav'
+import SnareBuild from '../sounds/snareBuild.wav'
+import SynthChorus from '../sounds/SynthChorus.wav'
+import Wobble from '../sounds/Wobble.wav'
+
 
 import { audioCtx } from './soundManager'
 
 // When adding new sounds, try to keep id to simple strings
 export const displaySounds = {
-    China: new Audio(TrumpChina),
-    MillionDollar: new Audio(TrumpMillionDollar),
-    America: new Audio(TrumpAmerica),
-    Bigger: new Audio(TrumpBigger),
-    Rich: new Audio(TrumpRich),
-    Ship: new Audio(ShipSound),
-    Electro1: new Audio(CompressedElectro),
-    Electro2: new Audio(OneFiveElectro),
-    Electro3: new Audio(LoudElectro),
+    TrumpMillionDollar: new Audio(TrumpMillionDollar),
+    TrumpAmerica: new Audio(TrumpAmerica),
+    TrumpBigger: new Audio(TrumpBigger),
+    TrumpRich: new Audio(TrumpRich),
+    Atmosphere: new Audio(Atmosphere),
+    AtmosphereHigh: new Audio(AtmosphereHigh) ,
+    BuildUp: new Audio(BuildUp),
+    // Buong: new Audio(Buong),
+    Drop: new Audio(Drop),
+    // ElectroChorus: new Audio(ElectroChorus),
+    HighChorus: new Audio(HighChorus),
+    Hat: new Audio(Hat),
+    Kick: new Audio(Kick),
     Snare: new Audio(Snare),
-    Dance: new Audio(Dance),
+    LofiDrum: new Audio(LofiDrum),
+    MidChorus: new Audio(MidChorus),
+    Organ: new Audio(Organ),
+    
+    // PianoBackground: new Audio(PianoBackground),
+    // PianoChorus: new Audio(PianoChorus),
+    // ShakerLoop: new Audio(ShakerLoop),
+    SnareBuild: new Audio(SnareBuild),
+    // SynthChorus: new Audio(SynthChorus),
+    Wobble: new Audio(Wobble),
 }
 
 const allSounds = {
-    China: TrumpChina,
-    MillionDollar: TrumpMillionDollar,
-    America: TrumpAmerica,
-    Bigger: TrumpBigger,
-    Rich: TrumpRich,
-    Ship: ShipSound,
-    Electro1: CompressedElectro,
-    Electro2: OneFiveElectro,
-    Electro3: LoudElectro,
+    TrumpMillionDollar: TrumpMillionDollar,
+    TrumpAmerica: TrumpAmerica,
+    TrumpBigger: TrumpBigger,
+    TrumpRich: TrumpRich,
+    Atmosphere: Atmosphere,
+    AtmosphereHigh: AtmosphereHigh ,
+    BuildUp: BuildUp,
+    Buong: Buong,
+    Drop: Drop,
+    ElectroChorus: ElectroChorus,
+    Hat: Hat,
+    HighChorus: HighChorus,
+    Kick: Kick,
+    LofiDrum: LofiDrum,
+    MidChorus: MidChorus,
+    Organ: Organ,
+    
+    PianoBackground: PianoBackground,
+    PianoChorus: PianoChorus,
+    ShakerLoop: ShakerLoop,
     Snare: Snare,
-    Dance: Dance,
+    SnareBuild: SnareBuild,
+    SynthChorus: SynthChorus,
+    Wobble: Wobble,
 }
 
 const load = require('audio-loader')
@@ -100,6 +141,7 @@ export class Sound {
 
             return buffer
         }).catch(error => {
+            console.log(error);
             return this.setUpAudio();
         })
     }

@@ -33,7 +33,7 @@ class SoundButtons extends Component {
         return (
             <div>
                 <h3>Click here to listen to sounds!</h3>
-                <div className="flex-display buttons">
+                <div className="buttons">
                     {this.state.sounds.map(s => (
                         <div key={s.name}>
                             <Button onClick={() => this.onClick(s.sound)} variant="info" size="lg">
