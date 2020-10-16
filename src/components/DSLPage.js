@@ -7,16 +7,6 @@ class DSLPage extends Component {
     note = 'Note: You can change an existing sound you have added simply by calling Add, with the same name of the sound you added. It also might be helpful to copy the entire command that you put in before, and keep adding on to it'
     samples = [
         {
-            eventKey: '0',
-            title: 'Sample Commands',
-            text: [
-                'Add sound_china as sound1 at 5, length 20 (interval 4), volume 50, speed 1.5; Add sound_dance as sound2 at 10, length 15 (interval 4);',
-                'Add sound_rich as sound3 at 0, volume 150, speed 0.5; Add sound_electro1 as sound 4 at 0, volume 50, speed 1.5;',
-                'Remove sound3;',
-                'Restart;',
-            ],
-        },
-        {
             eventKey: '1',
             title: 'Sample Music 1',
             text: [
