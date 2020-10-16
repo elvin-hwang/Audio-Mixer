@@ -51,7 +51,7 @@ export const displaySounds = {
     // PianoChorus: new Audio(PianoChorus),
     // ShakerLoop: new Audio(ShakerLoop),
     SnareBuild: new Audio(SnareBuild),
-    // SynthChorus: new Audio(SynthChorus),
+    SynthChorus: new Audio(SynthChorus),
     Wobble: new Audio(Wobble),
 }
 
